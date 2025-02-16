@@ -4,7 +4,7 @@
         <t t-call="website.layout">
             <div class="container d-flex">
                 <!-- Sidebar -->
-                <div class="sidebar">
+                <div id="sidebar" class="sidebar">
                     <h3>Categories</h3>
                     <ul>
                         <t t-foreach="categories" t-as="category">
@@ -42,7 +42,7 @@
         <t t-call="website.layout">
             <div class="container d-flex">
                 <!-- Sidebar -->
-                <div class="sidebar">
+                <div id="sidebar" class="sidebar">
                     <h3>Categories</h3>
                     <ul>
                         <t t-foreach="categories" t-as="category">
@@ -65,21 +65,8 @@
                 <!-- Main Content -->
                 <div class="content">
                     <h3><t t-esc="document.category_id.name"/></h3>
-                    <h3><t t-esc="document.title"/></h3> <!-- Make sure the 'document' variable is used here -->
-                    <div t-raw="document.content"/> <!-- Render the document content -->
-                </div>
-            </div>
-        </t>
-    </template>
-
-    <!-- Template for the login message (for users who are not logged in) -->
-    <template id="login_message_template" name="Login Required">
-        <t t-call="website.layout">
-            <div class="container">
-                <div class="content">
-                    <h2>Login Required</h2>
-                    <p>You must be logged in to access the documentation.</p>
-                    <a href="/web/login" class="btn btn-primary">Login</a>
+                    <h3><t t-esc="document.title"/></h3>
+                    <div t-raw="document.content"/>
                 </div>
             </div>
         </t>

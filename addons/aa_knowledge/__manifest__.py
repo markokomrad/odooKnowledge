@@ -10,6 +10,7 @@
         'views/document_views.xml',
         'views/category_views.xml',
         'views/templates.xml',
+        'views/public_view.xml',
         'security/ir.model.access.csv',
     ],
     'assets': {

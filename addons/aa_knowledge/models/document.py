@@ -11,7 +11,6 @@ class Documentation(models.Model):
     category_id = fields.Many2one("documentation.category", string="Category")
     author_id = fields.Many2one("res.users", string="Author", default=lambda self: self.env.user)
     
-    # Access control login
     def check_access_rights(self, operation, raise_exception=True):
         if not self.env.user or self.env.user._is_public():
             if raise_exception:

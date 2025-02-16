@@ -1,28 +1,29 @@
 /* In static/src/css/custom_style.css */
 
-/* Deprecated: Mislio sam da ce mi znaciti nesto dugme, ali nije, pa sam ga ostavio ako bude trebalo posle */
-.btn-orange {
-    background-color: #FFA500 !important;  /* Orange color */
-    color: white !important;
-    padding: 10px 20px !important;
-    border-radius: 5px !important;
-    text-decoration: none !important;
-    display: inline-block;
-    font-weight: bold;
-    text-align: center;
-    border: 2px solid #FFA500 !important; /* Border for button */
+.sidebar-container {
+    position: relative;
 }
 
-.btn-orange:hover {
-    background-color: #e69500 !important;  /* Darker orange for hover effect */
-    border: 2px solid #e69500 !important;  /* Border color change on hover */
+@media (max-width: 993px) {
+    .sidebar {
+        transform: translateX(-100%);
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 100vh;
+        box-shadow: 2px 0px 5px rgba(0,0,0,0.2);
+        overflow: hidden;
+    }
 }
 
 /* Sidebar Styles */
 .sidebar {
     width: 18%;
+    background: #f8f8f8;
     padding: 20px;
     border-right: 1px solid #a1a1a1;
+    transition: transform 0.3s ease-in-out;
+    overflow: hidden;
 }
 
 /* Main Content Styles */
@@ -55,5 +56,6 @@
 
 /* Sidebar pomeranje u levu stranu */
 .container.d-flex {
-    margin-left: 0px;
+    margin-left: -20px;
+    max-width: 100%;
 }
