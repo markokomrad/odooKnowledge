@@ -1,0 +1,87 @@
+<odoo>
+    <!-- Template for the documentation list (unchanged) -->
+    <template id="docs_template" name="Documentation List">
+        <t t-call="website.layout">
+            <div class="container d-flex">
+                <!-- Sidebar -->
+                <div class="sidebar">
+                    <h3>Categories</h3>
+                    <ul>
+                        <t t-foreach="categories" t-as="category">
+                            <li>
+                                <strong><t t-esc="category.name"/></strong>
+                                <ul>
+                                    <t t-foreach="category.document_ids" t-as="doc">
+                                        <li>
+                                            <a t-att-href="'/docs/%s' % doc.id">
+                                                <t t-esc="doc.title"/>
+                                            </a>
+                                        </li>
+                                    </t>
+                                </ul>
+                            </li>
+                        </t>
+                    </ul>
+                </div>
+                
+                <!-- Main Content -->
+                <div class="content">
+                    <h3>Welcome to the Documentation Wiki page!</h3>
+                    <!-- Display the document content if a document is selected -->
+                    <t t-if="document">
+                        <h3><t t-esc="document.title"/></h3>
+                        <div t-raw="document.content"/>
+                    </t>
+                </div>
+            </div>
+        </t>
+    </template>
+
+    <!-- Add a new template for the document detail view -->
+    <template id="doc_detail_template" name="Documentation Detail">
+        <t t-call="website.layout">
+            <div class="container d-flex">
+                <!-- Sidebar -->
+                <div class="sidebar">
+                    <h3>Categories</h3>
+                    <ul>
+                        <t t-foreach="categories" t-as="category">
+                            <li>
+                                <strong><t t-esc="category.name"/></strong>
+                                <ul>
+                                    <t t-foreach="category.document_ids" t-as="doc">
+                                        <li>
+                                            <a t-att-href="'/docs/%s' % doc.id">
+                                                <t t-esc="doc.title"/>
+                                            </a>
+                                        </li>
+                                    </t>
+                                </ul>
+                            </li>
+                        </t>
+                    </ul>
+                </div>
+                
+                <!-- Main Content -->
+                <div class="content">
+                    <h3><t t-esc="document.category_id.name"/></h3>
+                    <h3><t t-esc="document.title"/></h3> <!-- Make sure the 'document' variable is used here -->
+                    <div t-raw="document.content"/> <!-- Render the document content -->
+                </div>
+            </div>
+        </t>
+    </template>
+
+    <!-- Template for the login message (for users who are not logged in) -->
+    <template id="login_message_template" name="Login Required">
+        <t t-call="website.layout">
+            <div class="container">
+                <div class="content">
+                    <h2>Login Required</h2>
+                    <p>You must be logged in to access the documentation.</p>
+                    <a href="/web/login" class="btn btn-primary">Login</a>
+                </div>
+            </div>
+        </t>
+    </template>
+</odoo>

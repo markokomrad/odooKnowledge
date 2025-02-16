@@ -1,0 +1,4 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_documentation_manager,Documentation Manager,model_documentation_document,,1,1,1,1
+access_documentation_category,Documentation Category,model_documentation_category,,1,1,1,1
+access_documentation_public,Documentation Public,model_documentation_document,,1,0,0,0

@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <!-- Prikaz menija Documentation (Individualni dokumenti) -->
+    <record id="view_documentation_document_list" model="ir.ui.view">
+        <field name="name">documentation.document.list</field>
+        <field name="model">documentation.document</field>
+        <field name="arch" type="xml">
+            <list>
+                <field name="title"/>
+                <field name="category_id"/>
+                <field name="create_date"/>
+                <field name="author_id"/>
+            </list>
+        </field>
+    </record>
+
+    <!-- Pravljenje novog dokumenta -->
+    <record id="view_documentation_document_form" model="ir.ui.view">
+        <field name="name">documentation.document.form</field>
+        <field name="model">documentation.document</field>
+        <field name="arch" type="xml">
+            <form string="Document">
+                <sheet>
+                    <group>
+                        <field name="title"/>
+                        <field name="content" widget="html"/>
+                        <field name="category_id"/>
+                        <field name="author_id" readonly="1"/> 
+                    </group>
+                    <footer>
+                        <button string="Save" type="object" name="write"/>
+                        <button string="Cancel" class="oe_link" special="cancel"/>
+                    </footer>
+                </sheet>
+            </form>
+        </field>
+    </record>
+</odoo>

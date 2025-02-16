@@ -1,0 +1,59 @@
+/* In static/src/css/custom_style.css */
+
+/* Deprecated: Mislio sam da ce mi znaciti nesto dugme, ali nije, pa sam ga ostavio ako bude trebalo posle */
+.btn-orange {
+    background-color: #FFA500 !important;  /* Orange color */
+    color: white !important;
+    padding: 10px 20px !important;
+    border-radius: 5px !important;
+    text-decoration: none !important;
+    display: inline-block;
+    font-weight: bold;
+    text-align: center;
+    border: 2px solid #FFA500 !important; /* Border for button */
+}
+
+.btn-orange:hover {
+    background-color: #e69500 !important;  /* Darker orange for hover effect */
+    border: 2px solid #e69500 !important;  /* Border color change on hover */
+}
+
+/* Sidebar Styles */
+.sidebar {
+    width: 18%;
+    padding: 20px;
+    border-right: 1px solid #a1a1a1;
+}
+
+/* Main Content Styles */
+.content {
+    width: 75%;
+    padding: 20px;
+}
+
+/* Change document link color */
+.sidebar a {
+    color: #333; /* Dark gray instead of default blue */
+    text-decoration: none; /* Remove underline */
+}
+
+/* Change link color on hover */
+.sidebar a:hover {
+    color: #e69500; /* Darker orange on hover */
+}
+
+
+.sidebar ul {
+    padding: 0;
+    list-style-type: none;
+}
+
+.sidebar li {
+    display: block;
+    text-align: left;
+}
+
+/* Sidebar pomeranje u levu stranu */
+.container.d-flex {
+    margin-left: 0px;
+}
