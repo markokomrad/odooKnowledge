@@ -1,0 +1,11 @@
+<odoo>
+    <template id="error_403_template" name="403 Forbidden">
+        <t t-call="website.layout">
+            <div class="container">
+                <h1>403 - Forbidden</h1>
+                <p>Nemate dozvolu za pristup ovoj stranici.</p>
+                <a href="/docs" class="btn btn-primary">Nazad na dokumentaciju</a>
+            </div>
+        </t>
+    </template>
+</odoo>

@@ -1,4 +1,4 @@
-from odoo import models, fields
+from odoo import models, fields, api
 from odoo.exceptions import AccessError
 
 
@@ -18,6 +18,11 @@ class Documentation(models.Model):
             return False
         return super(Documentation, self).check_access_rights(operation, raise_exception)
 
+    @api.model
+    def get_allowed_documents(self):
+        """Vrati samo dokumente iz kategorija kojima korisnik ima pristup"""
+        allowed_categories = self.env["documentation.category"].get_allowed_categories()
+        return self.search([('category_id', 'in', allowed_categories.ids)])
     
 class DocumentationCategory(models.Model):
     _name = "documentation.category"
@@ -25,5 +30,9 @@ class DocumentationCategory(models.Model):
 
     name = fields.Char(required=True)
     document_ids = fields.One2many("documentation.document", "category_id", string="Documents")
-
+    user_id = fields.Many2many("res.users", string="Users", help="Select a user")
     
+    @api.model
+    def get_allowed_categories(self):
+        """Vrati samo kategorije kojima korisnik ima pristup"""
+        return self.search([('user_id', 'in', [self.env.user.id])])

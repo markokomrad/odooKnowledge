@@ -22,6 +22,9 @@
                     <group>
                         <field name="name"/>
                         <field name="document_ids"/>
+                        <field name="user_id" 
+                               options="{'no_create': True}" 
+                               widget="many2many_tags"/>
                     </group>
                     <footer>
                         <button string="Save" type="object" name="write"/>

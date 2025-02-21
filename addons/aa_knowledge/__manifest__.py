@@ -11,6 +11,7 @@
         'views/category_views.xml',
         'views/templates.xml',
         'views/public_view.xml',
+        'views/forbidden_view.xml',
         'security/ir.model.access.csv',
     ],
     'assets': {

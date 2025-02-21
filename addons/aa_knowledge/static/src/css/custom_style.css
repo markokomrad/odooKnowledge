@@ -4,7 +4,7 @@
     position: relative;
 }
 
-@media (max-width: 993px) {
+/* @media (max-width: 993px) {
     .sidebar {
         transform: translateX(-100%);
         position: absolute;
@@ -14,7 +14,7 @@
         box-shadow: 2px 0px 5px rgba(0,0,0,0.2);
         overflow: hidden;
     }
-}
+} */
 
 /* Sidebar Styles */
 .sidebar {
@@ -30,6 +30,8 @@
 .content {
     width: 75%;
     padding: 20px;
+    min-height:70vh;
+    height: 100%;
 }
 
 /* Change document link color */
